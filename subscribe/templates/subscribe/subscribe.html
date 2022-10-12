@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+  <div class="container">
+      <form class="email-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="email-submit">Submit</button>
+      </form>
+   </div>
+</section>
+{% endblock content %}
+
+
+
+
+{% comment %} <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' type='text/css' href='{% static 'subscribe/main.css' %}'>
+    </head>
+
+    <body>
+        <h1> <image src='{% static 'subscribe/bell.png' %}' alt='image' /> Subscription Form </h1>
+        <form method='post'>
+
+            {% csrf_token %}
+            {{form.as_p}}
+
+            {% for field in form %}
+                <div class='subscribe_field'>
+                    {{field.errors}}
+                    {{field.label_tag}}
+                    <label for={{field.id_for_label}}> {{field.label}} </label>
+                    {{field}}
+                </div>
+            {% endfor %}
+            <input type='submit' value='Submit' />
+
+            </form>
+            <button onclick='popup()'>Click Me</button>
+            <script src={%static 'subscribe/main.js'%}></script>
+    </body> 
+
+</html> {% endcomment %}

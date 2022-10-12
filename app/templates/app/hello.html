@@ -1,0 +1,18 @@
+
+{% comment "first comment in hello" %}
+This my first template file
+{% endcomment %}
+
+{%if is_authenticated %}
+    <h1>Hello {{name}}!!!</h1>
+{% else %}
+    <h1>Hello User!!!</h1>
+{% endif %}
+<h2>{{age}}</h2>
+<h1>{{list_items | length }}</h1>
+<h2>Popular Jieng Names</h2>
+{% for name in list_items %}
+    <p>{{name}}</p>
+{% endfor %}
+
+<h2>{{temp_object.d}}</h2>
